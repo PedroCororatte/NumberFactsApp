@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:number_facts/ui/search_bar.dart';
-import 'buttons.dart';
+import 'package:number_facts/src/search_bar.dart';
 import 'content.dart';
 
 const MaterialColor white = MaterialColor(
@@ -29,23 +28,21 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NumberFacts',
-      theme: ThemeData(primarySwatch: white, scaffoldBackgroundColor: bgColor),
-      home: Scaffold(
-        body: SafeArea(
+        title: 'NumberFacts',
+        theme:
+            ThemeData(primarySwatch: white, scaffoldBackgroundColor: bgColor),
+        home: Scaffold(
+            body: SafeArea(
           child: Center(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const <Widget>[
-                    Text('Number Facts',
-                        style: TextStyle(
-                            fontSize: 30, color: Colors.white, fontFamily: 'Sen')),
-                    Content(),
-                    SearchBar(),
-                    Buttons(),
-                  ])),
-        ),
-      ),
-    );
+                Text('Number Fact',
+                    style: TextStyle(
+                        fontSize: 30, color: Colors.white, fontFamily: 'Sen')),
+                Content(),
+                SearchBar(),
+              ])),
+        )));
   }
 }

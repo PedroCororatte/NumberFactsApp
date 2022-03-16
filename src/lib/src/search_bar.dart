@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:number_facts/main.dart';
-import 'package:number_facts/ui/app.dart';
+import 'package:number_facts/src/app.dart';
+import 'package:provider/provider.dart';
+import '../controller.dart';
+import 'buttons.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Search>(context);
     return Column(children: <Widget>[
       Container(
           padding: const EdgeInsets.all(20),
           child: TextField(
+            controller: provider.textController,
+            keyboardType: TextInputType.number,
             style: const TextStyle(color: white),
             decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -26,7 +32,7 @@ class SearchBar extends StatelessWidget {
                 hintText: 'Type a number',
                 hintStyle: const TextStyle(color: Colors.grey)),
           )),
-
+      const Buttons()
     ]);
   }
 }
