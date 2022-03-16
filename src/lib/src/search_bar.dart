@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:number_facts/ui/MyApp.dart';
+import 'package:number_facts/main.dart';
+import 'package:number_facts/ui/app.dart';
 
-class Search extends StatelessWidget {
-  const Search({Key? key}) : super(key: key);
+class SearchBar extends StatelessWidget {
+  const SearchBar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
@@ -25,25 +26,7 @@ class Search extends StatelessWidget {
                 hintText: 'Type a number',
                 hintStyle: const TextStyle(color: Colors.grey)),
           )),
-      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
-        ElevatedButton.icon(
-          onPressed: () {},
-          label: const Icon(
-            Icons.search,
-            size: 30,
-          ),
-          icon: const Text('Search', style: TextStyle(fontSize: 18)),
-          style: ElevatedButton.styleFrom(
-              primary: myBlue, minimumSize: const Size(150, 50)),
-        ),
-        ElevatedButton.icon(
-          onPressed: () {},
-          label: const Icon(Icons.casino_outlined, size: 30),
-          icon: const Text('Random', style: TextStyle(fontSize: 18)),
-          style: ElevatedButton.styleFrom(
-              primary: myPurple, minimumSize: const Size(150, 50)),
-        )
-      ])
+
     ]);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'MyHomePage.dart';
+import 'package:number_facts/ui/search_bar.dart';
+import 'buttons.dart';
+import 'content.dart';
 
 const MaterialColor white = MaterialColor(
   0xFFFFFFFF,
@@ -21,15 +23,29 @@ const bgColor = Color(0xff2B2D42);
 const myBlue = Color(0xff6D77F6);
 const myPurple = Color(0xff9C43F8);
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'NumberFacts',
       theme: ThemeData(primarySwatch: white, scaffoldBackgroundColor: bgColor),
-      home: const MyHomePage(),
+      home: Scaffold(
+        body: SafeArea(
+          child: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const <Widget>[
+                    Text('Number Facts',
+                        style: TextStyle(
+                            fontSize: 30, color: Colors.white, fontFamily: 'Sen')),
+                    Content(),
+                    SearchBar(),
+                    Buttons(),
+                  ])),
+        ),
+      ),
     );
   }
 }
